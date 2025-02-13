@@ -97,14 +97,16 @@ function App() {
               className="absolute inset-0 bg-black/50 lg:hidden"
               onClick={() => setSidebarOpen(false)}
             />
-            <Sidebar
-              releases={filteredReleases}
-              selectedRelease={selectedRelease}
-              onSelectRelease={(id) => {
-                setSelectedRelease(id);
-                setSidebarOpen(false);
-              }}
-            />
+            <div className="relative z-30 h-full bg-white dark:bg-gray-900 lg:bg-transparent lg:dark:bg-transparent">
+              <Sidebar
+                releases={filteredReleases}
+                selectedRelease={selectedRelease}
+                onSelectRelease={(id) => {
+                  setSelectedRelease(id);
+                  setSidebarOpen(false);
+                }}
+              />
+            </div>
           </div>
           
           <main className="flex-1 overflow-auto p-4 lg:p-8 w-full">
