@@ -88,8 +88,9 @@ function App() {
                 <div className="mb-8 space-y-6 prose dark:prose-invert">
                   <ReactMarkdown
                     components={{
-                      code: ({ node, inline, className, children, ...props }) => {
-                        if (inline) {
+                      code: ({ node, className, children, ...props }: { node?: any, className?: string, children?: React.ReactNode }) => {
+                        const isInline = className?.includes('inline');
+                        if (isInline) {
                           return <code className={className} {...props}>{children}</code>;
                         }
                         return (
