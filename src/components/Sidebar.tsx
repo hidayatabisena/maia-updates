@@ -69,8 +69,18 @@ export function Sidebar({ releases, selectedRelease, onSelectRelease }: SidebarP
                             : 'hover:bg-gray-100 dark:hover:bg-gray-800'
                         )}
                       >
-                        <div className="font-medium">{release.title}</div>
-                        <div className="text-xs text-gray-500 dark:text-gray-400">
+                        <div className={cn(
+                          "font-medium",
+                          selectedRelease === release.id
+                            ? ''
+                            : 'opacity-75'
+                        )}>{release.title}</div>
+                        <div className={cn(
+                          'text-xs',
+                          selectedRelease === release.id
+                            ? 'text-white'
+                            : 'text-gray-500 dark:text-gray-400'
+                        )}>
                           {format(release.date, 'MMMM d, yyyy')}
                         </div>
                       </button>
