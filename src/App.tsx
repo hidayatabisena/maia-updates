@@ -38,6 +38,17 @@ function CodeBlock({ children, className }: { children: string, className?: stri
   );
 }
 
+function ImageComponent({ src, alt }: { src: string; alt?: string }) {
+  return (
+    <img
+      src={src}
+      alt={alt || ''}
+      loading="lazy"
+      className="rounded-lg"
+    />
+  );
+}
+
 function App() {
   const { theme } = useThemeStore();
   const [selectedRelease, setSelectedRelease] = useState(releases[0]?.id);
@@ -113,23 +124,24 @@ function App() {
             {currentRelease && (
               <div className="max-w-3xl mx-auto">
                 <div className="mb-8 space-y-6 prose dark:prose-invert prose-sm sm:prose-base">
-                  <ReactMarkdown
-                    components={{
-                      code: ({ node, className, children, ...props }: { node?: any, className?: string, children?: React.ReactNode }) => {
-                        const isInline = className?.includes('inline');
-                        if (isInline) {
-                          return <code className={className} {...props}>{children}</code>;
-                        }
-                        return (
-                          <CodeBlock className={className}>
-                            {String(children).replace(/\n$/, '')}
-                          </CodeBlock>
-                        );
-                      }
-                    }}
-                  >
-                    {currentRelease.content}
-                  </ReactMarkdown>
+                <ReactMarkdown
+            components={{
+              code: ({ node, className, children, ...props }) => {
+                const isInline = className?.includes('inline');
+                if (isInline) {
+                  return <code className={className} {...props}>{children}</code>;
+                }
+                return (
+                  <CodeBlock className={className}>
+                    {String(children).replace(/\n$/, '')}
+                  </CodeBlock>
+                );
+              },
+              img: ({ src, ...props }) => <ImageComponent src={src || ''} {...props} />
+            }}
+          >
+            {currentRelease.content}
+          </ReactMarkdown>
                 </div>
               </div>
             )}
