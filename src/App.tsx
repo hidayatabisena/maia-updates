@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { Copy, Check } from 'lucide-react';
+import { Copy, Check, Menu } from 'lucide-react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { ThemeToggle } from './components/ThemeToggle';
 import { Search } from './components/Search';
@@ -42,7 +42,8 @@ function App() {
   const { theme } = useThemeStore();
   const [selectedRelease, setSelectedRelease] = useState(releases[0]?.id);
   const [searchQuery, setSearchQuery] = useState('');
-
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
+  
   const filteredReleases = releases.filter(
     (release) =>
       release.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -57,7 +58,6 @@ function App() {
         'min-h-screen bg-white dark:bg-gray-900',
         'text-gray-900 dark:text-gray-100'
       )}>
-        {/* Header */}
         <header className={cn(
           'h-16 border-b border-gray-200 dark:border-gray-700',
           'bg-white dark:bg-gray-900'
@@ -65,32 +65,52 @@ function App() {
           <div className="h-full px-4 flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <button
-                onClick={() => setSelectedRelease(releases[0]?.id)}
-                className="flex items-center space-x-4 hover:opacity-75 transition-opacity"
+                onClick={() => setSidebarOpen(!isSidebarOpen)}
+                className="lg:hidden p-2"
               >
-                <Rocket className="w-6 h-6 text-primary dark:text-white" />
-                <h1 className="text-xl font-bold">MAIA Release Notes</h1>
+                <Menu className="w-6 h-6" />
+              </button>
+              <button
+                onClick={() => setSelectedRelease(releases[0]?.id)}
+                className="flex items-center space-x-2 sm:space-x-4 hover:opacity-75 transition-opacity"
+              >
+                <Rocket className="w-5 h-5 sm:w-6 sm:h-6 text-primary dark:text-white" />
+                <h1 className="text-lg sm:text-xl font-bold truncate">MAIA Release Notes</h1>
               </button>
             </div>
-            <div className="flex items-center space-x-4">
-              <Search value={searchQuery} onSearch={setSearchQuery} />
+            <div className="flex items-center space-x-2 sm:space-x-4">
+              <div className="hidden sm:block">
+                <Search value={searchQuery} onSearch={setSearchQuery} />
+              </div>
               <ThemeToggle />
             </div>
           </div>
         </header>
 
-        {/* Main Content */}
         <div className="flex h-[calc(100vh-4rem)]">
-          <Sidebar
-            releases={filteredReleases}
-            selectedRelease={selectedRelease}
-            onSelectRelease={setSelectedRelease}
-          />
+          <div className={cn(
+            'fixed inset-0 z-20 lg:relative',
+            'lg:block',
+            isSidebarOpen ? 'block' : 'hidden'
+          )}>
+            <div 
+              className="absolute inset-0 bg-black/50 lg:hidden"
+              onClick={() => setSidebarOpen(false)}
+            />
+            <Sidebar
+              releases={filteredReleases}
+              selectedRelease={selectedRelease}
+              onSelectRelease={(id) => {
+                setSelectedRelease(id);
+                setSidebarOpen(false);
+              }}
+            />
+          </div>
           
-          <main className="flex-1 overflow-auto p-8">
+          <main className="flex-1 overflow-auto p-4 lg:p-8 w-full">
             {currentRelease && (
               <div className="max-w-3xl mx-auto">
-                <div className="mb-8 space-y-6 prose dark:prose-invert">
+                <div className="mb-8 space-y-6 prose dark:prose-invert prose-sm sm:prose-base">
                   <ReactMarkdown
                     components={{
                       code: ({ node, className, children, ...props }: { node?: any, className?: string, children?: React.ReactNode }) => {
