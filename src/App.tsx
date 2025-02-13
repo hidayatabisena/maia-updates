@@ -64,8 +64,13 @@ function App() {
         )}>
           <div className="h-full px-4 flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <Rocket className="w-6 h-6 text-primary dark:text-white" />
-              <h1 className="text-xl font-bold">MAIA Release Notes</h1>
+              <button
+                onClick={() => setSelectedRelease(releases[0]?.id)}
+                className="flex items-center space-x-4 hover:opacity-75 transition-opacity"
+              >
+                <Rocket className="w-6 h-6 text-primary dark:text-white" />
+                <h1 className="text-xl font-bold">MAIA Release Notes</h1>
+              </button>
             </div>
             <div className="flex items-center space-x-4">
               <Search value={searchQuery} onSearch={setSearchQuery} />
