@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import ReactMarkdown from 'react-markdown';
+import { Copy, Check } from 'lucide-react';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { ThemeToggle } from './components/ThemeToggle';
 import { Search } from './components/Search';
 import { Sidebar } from './components/Sidebar';
@@ -8,6 +11,32 @@ import { cn } from './lib/utils';
 import { getAllReleaseNotes } from './lib/content';
 
 const releases = getAllReleaseNotes();
+
+function CodeBlock({ children, className }: { children: string, className?: string }) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <div className="relative group">
+      <CopyToClipboard text={children} onCopy={handleCopy}>
+        <button className="absolute right-2 top-2 p-2 rounded-lg bg-gray-800 opacity-0 group-hover:opacity-100 transition-opacity">
+          {copied ? (
+            <Check className="h-4 w-4 text-green-400" />
+          ) : (
+            <Copy className="h-4 w-4 text-gray-400" />
+          )}
+        </button>
+      </CopyToClipboard>
+      <pre className={className}>
+        <code>{children}</code>
+      </pre>
+    </div>
+  );
+}
 
 function App() {
   const { theme } = useThemeStore();
@@ -56,44 +85,23 @@ function App() {
           <main className="flex-1 overflow-auto p-8">
             {currentRelease && (
               <div className="max-w-3xl mx-auto">
-                <div className="mb-8 space-y-6">
-                  {currentRelease.content.split('\n\n').map((block, index) => {
-                    if (block.startsWith('![')) {
-                      const match = block.match(/!\[(.*?)\]\((.*?)\)/);
-                      if (match) {
+                <div className="mb-8 space-y-6 prose dark:prose-invert">
+                  <ReactMarkdown
+                    components={{
+                      code: ({ node, inline, className, children, ...props }) => {
+                        if (inline) {
+                          return <code className={className} {...props}>{children}</code>;
+                        }
                         return (
-                          <div key={index} className="rounded-lg overflow-hidden shadow-lg">
-                            <img
-                              src={match[2]}
-                              alt={match[1]}
-                              className="w-full h-auto"
-                            />
-                          </div>
+                          <CodeBlock className={className}>
+                            {String(children).replace(/\n$/, '')}
+                          </CodeBlock>
                         );
                       }
-                    }
-                    
-                    if (block.startsWith('##')) {
-                      const title = block.replace('##', '').trim();
-                      return (
-                        <h2 key={index} className="text-2xl font-bold mt-8">
-                          {title}
-                        </h2>
-                      );
-                    }
-                    
-                    if (block.startsWith('-')) {
-                      return (
-                        <ul key={index} className="list-disc pl-6 space-y-2">
-                          {block.split('\n').map((item, i) => (
-                            <li key={i}>{item.replace('-', '').trim()}</li>
-                          ))}
-                        </ul>
-                      );
-                    }
-                    
-                    return <p key={index}>{block}</p>;
-                  })}
+                    }}
+                  >
+                    {currentRelease.content}
+                  </ReactMarkdown>
                 </div>
               </div>
             )}
