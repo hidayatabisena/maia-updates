@@ -3,8 +3,6 @@ title: February Update 📑
 date: 2025-02-24
 ---
 
-![New plugins](public/new-plugins.webp)
-
 ## Fitur Baru: Plugin PowerPoint, Excel, dan Word 🚀
 
  Fitur ini memungkinkan pengguna untuk menghasilkan laporan otomatis dalam berbagai format, mempercepat analisis data, serta meningkatkan efisiensi kerja.
