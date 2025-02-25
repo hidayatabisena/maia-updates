@@ -5,6 +5,8 @@ date: 2025-02-24
 
 ## Fitur Baru: Plugin PowerPoint, Excel, dan Word 🚀
 
+![Office Plugin](https://res.cloudinary.com/moyadev/image/upload/v1740451844/maia/releases/office-plugin_e4z3ww.webp)
+
  Fitur ini memungkinkan pengguna untuk menghasilkan laporan otomatis dalam berbagai format, mempercepat analisis data, serta meningkatkan efisiensi kerja.
 
  ✅ Otomatisasi Pembuatan Dokumen
