@@ -13,6 +13,10 @@ Selain untuk pembuatan konten tulisan, MAIA Writing Mode juga bisa digunakan unt
 
 ![Generate Code](https://res.cloudinary.com/moyadev/image/upload/v1740663429/maia/releases/write-mode-code_fiy7ci.webp)
 
+Untuk mengaktifkan fitur Writing Mode, bisa melalui AI Tools di Dashboard Admin.
+
+![AI Tools](https://res.cloudinary.com/moyadev/image/upload/v1740736913/ai-tools-writing-mode_vagxtw.webp)
+
 ---
 
 ## Update lainnya 💅🏻
