@@ -31,8 +31,8 @@ function CodeBlock({ children, className }: { children: string, className?: stri
           )}
         </button>
       </CopyToClipboard>
-      <pre className={className}>
-        <code>{children}</code>
+      <pre className={cn(className, "whitespace-pre-wrap break-words")}>
+        <code className="whitespace-pre-wrap break-words">{children}</code>
       </pre>
     </div>
   );
