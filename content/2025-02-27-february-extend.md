@@ -17,6 +17,10 @@ Untuk mengaktifkan fitur Writing Mode, bisa melalui AI Tools di Dashboard Admin.
 
 ![AI Tools](https://res.cloudinary.com/moyadev/image/upload/v1740736913/ai-tools-writing-mode_vagxtw.webp)
 
+Lalu untuk tutorial penggunaannya dari sisi user, bisa dilihat pada link dibawah ini:
+
+📺 [Tutorial Penggunaan fitur Writing Mode](https://sena.smmall.cloud/MTc0MTA1NTU3NTY5Mw)
+
 ---
 
 ## Update lainnya 💅🏻
