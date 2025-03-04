@@ -13,6 +13,9 @@ Tersedia template model baru untuk Google Gemini family:
 - Gemini 2.0 Flash Thinking Experimental, 
 - Gemini 2.0 Flash Experimental
 
+Artikel lengkap:
+[https://developers.googleblog.com/en/gemini-2-family-expands/](https://developers.googleblog.com/en/gemini-2-family-expands/)
+
 ---
 
 ## Gemini 2.0 Flash bisa support video sebagai context
