@@ -27,6 +27,10 @@ Pengaturannya seperti ini:
 
 > RALAT: Karena ada perubahan API response dari Plagiarism Check, nama Author bisa dikosongkan karena tidak berpengaruh
 
+> 🔗 Link tutorial penggunaan untuk member: [Video Tutorial Plagiarism Checker](https://sena.smmall.cloud/MTc0MTU4NDQ4NjgzOQ)
+
+---
+
 ### 2️⃣ AI Detector
 
 > Untuk mendapatkan API Key AI Detector, bisa diakses di [https://plagiarismcheck.org/pricing/?business=](https://plagiarismcheck.org/pricing/?business=)
@@ -35,12 +39,18 @@ Pengaturannya seperti ini:
 
 ![AI Detector](https://res.cloudinary.com/moyadev/image/upload/v1741592246/maia/releases/ai-detector_fig8x9.png)
 
+> 🔗 Link penggunaan untuk member: [Video Tutorial AI Detector](https://sena.smmall.cloud/MTc0MTU4ODAwMTU1Mw)
+
+---
+
 
 ### 3️⃣ AI Humanizer
 
 Pengaturannya seperti ini:
 
 ![AI Humanizer](https://res.cloudinary.com/moyadev/image/upload/v1741592619/maia/releases/ai-humanizer_xxmck2.png)
+
+> 🔗 Link penggunaan untuk member: [Video Tutorial AI Humanizer](https://sena.smmall.cloud/MTc0MTU4OTE5MzM0MQ)
 
 ---
 
