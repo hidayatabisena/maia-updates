@@ -1,7 +1,7 @@
 import type { ReleaseNote } from '../types';
 
 // Import all markdown files
-const modules = import.meta.glob('/content/*.md', { eager: true, as: 'raw' });
+const modules = import.meta.glob('/content/*.md', { eager: true, query: '?raw', import: 'default' });
 
 function parseFrontmatter(content: string) {
   const frontmatterRegex = /^---\n([\s\S]*?)\n---\n([\s\S]*)$/;
