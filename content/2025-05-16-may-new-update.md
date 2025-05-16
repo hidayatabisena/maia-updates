@@ -16,7 +16,7 @@ date: 2025-05-16
 ## UI/UX Improvement
 - Untuk pengalaman yang lebih clean di mobile, Output Format dan Settings kini disembunyikan. Tampilan jadi lebih fokus ketika digunakan.
 - Tombol New Chat sekarang dipindahkan ke bagian atas di tampilan mobile, supaya aksesnya lebih cepat dan intuitif.
-- Fitur Internet Browsing sekarang dipindahkan dari menu Settings ke tombol ikon 🔍 Search yang lebih intuitif dan gampang diakses.
+- Fitur Internet Browsing sekarang dipindahkan dari menu Settings ke tombol ikon 🌐 Globe yang lebih intuitif dan gampang diakses.
 - Tombol Upload Gambar dan Upload File telah digabung menjadi satu tombol multifungsi untuk menyederhanakan antarmuka dan meningkatkan efisiensi penggunaan.
 - Untuk menjaga antarmuka tetap simpel dan fokus, badge LLM dan Browsing kini tidak lagi ditampilkan.
 - Fitur Model Switcher kini ditambahkan di dekat kolom input untuk memudahkan pengguna berpindah antar model dengan lebih cepat dan praktis.
