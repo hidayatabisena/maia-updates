@@ -44,3 +44,10 @@ Kami terus menyempurnakan model dan antarmuka. Masukan dari kamu sangat berharga
 
 🚀 Siap Dicoba?
 Fitur ini sudah tersedia di AI Tools
+
+## Update lainnya
+- Enable/disable MCP features
+- Limit number of MCP activation in end-user
+- MCP Marketplace
+
+![MCP Setup](https://res.cloudinary.com/moyadev/image/upload/v1749547025/maia/releases/mcp-switch_elqmi1.webp)
