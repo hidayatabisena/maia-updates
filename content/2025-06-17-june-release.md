@@ -8,7 +8,7 @@ date: 2025-06-17
 ---
 Kami memperkenalkan fitur terbaru: Deep Research V2, tools riset berbasis AI yang mampu menghasilkan output dalam bentuk **PDF paper profesional**, **Web Report interaktif**, dan juga **file LaTeX yang dapat diunduh**.
 
-![Deep Research V2](https://res.cloudinary.com/moyadev/image/upload/v1750136389/maia/releases/deep-research_t2upfc.webp)
+![Deep Research V2](https://res.cloudinary.com/moyadev/image/upload/v1750139352/maia/releases/deep-research-v2_tu9sqd.webp)
 
 
 ### Apa yang baru?
@@ -28,6 +28,10 @@ Kami memperkenalkan fitur terbaru: Deep Research V2, tools riset berbasis AI yan
 - Web Report: [Lihat Web](https://c73f02b4-55b5-44f7-bd62-606829e88603.laman.ai/)
 
 ![Screenshot results](https://res.cloudinary.com/moyadev/image/upload/v1750137087/maia/releases/results_jghs2b.webp)
+
+### Cara mengaktifkan
+
+![How to activate](https://res.cloudinary.com/moyadev/image/upload/v1750136389/maia/releases/deep-research_t2upfc.webp)
 
 ### ⚠️ Catatan Penting
 - Fitur ini tersedia dalam skema Limited Access.
