@@ -74,7 +74,10 @@ export function Sidebar({ releases, selectedRelease, onSelectRelease }: SidebarP
                     .sort(([a], [b]) => Number(b) - Number(a))
                     .map(([month, monthReleases]) => {
                       const yearMonth = `${year}-${month}`;
-                      const isExpanded = expandedMonths[yearMonth] ?? true;
+                      // Check if this month contains the selected release
+                      const containsSelectedRelease = monthReleases.some(release => release.id === selectedRelease);
+                      // Only expand the month that contains the selected release
+                      const isExpanded = expandedMonths[yearMonth] ?? containsSelectedRelease;
                       
                       return (
                         <div key={month} className="pl-2">
