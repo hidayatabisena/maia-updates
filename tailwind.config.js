@@ -15,7 +15,7 @@ export default {
             a: {
               color: '#30336b',
               '&:hover': {
-                color: '#252857',
+                color: '#6366f1', // Changed to a bright indigo color for more noticeable hover effect
               },
             },
             h1: {
@@ -35,6 +35,16 @@ export default {
             },
             strong: {
               color: 'inherit',
+            },
+          },
+        },
+        invert: {
+          css: {
+            a: {
+              color: '#93c5fd', // Bright blue for dark mode
+              '&:hover': {
+                color: '#60a5fa', // Slightly darker on hover
+              },
             },
           },
         },
