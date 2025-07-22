@@ -1,7 +1,7 @@
 import type { ReleaseNote } from '../types';
 
-// Import all markdown files
-const modules = import.meta.glob('/content/*.md', { eager: true, query: '?raw', import: 'default' });
+// Import all markdown files recursively from subfolders
+const modules = import.meta.glob('/content/**/*.md', { eager: true, query: '?raw', import: 'default' });
 
 function parseFrontmatter(content: string) {
   const frontmatterRegex = /^---\n([\s\S]*?)\n---\n([\s\S]*)$/;
@@ -27,8 +27,11 @@ export function getAllReleaseNotes(): ReleaseNote[] {
     const parsed = parseFrontmatter(content as string);
     if (!parsed) throw new Error(`Invalid frontmatter in ${path}`);
     
+    // Extract filename from nested path to maintain original ID format
+    const filename = path.split('/').pop() || '';
+    
     return {
-      id: path.replace('/content/', '').replace('.md', ''),
+      id: filename.replace('.md', ''),
       title: parsed.data.title,
       date: new Date(parsed.data.date),
       content: parsed.content
