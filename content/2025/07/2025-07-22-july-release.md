@@ -5,6 +5,8 @@ date: 2025-07-22
 
 ## Image Editor Update
 
+---
+
 Tersedia fitur baru di AI Tools Image Editor yaitu:
 - Upscale image, dan
 - Remove background

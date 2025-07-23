@@ -5,6 +5,8 @@ date: 2025-07-15
 
 ## NEW Template Model 🚀
 
+---
+
 Kini telah hadir template baru seperti:
 - Template provider Cerebras
 - Template video gen Veo 3 fast dari provider Fal.AI
