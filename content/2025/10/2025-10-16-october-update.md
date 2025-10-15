@@ -7,7 +7,7 @@ date: 2025-10-16
 
 ![MAIA Router](https://res.cloudinary.com/moyadev/image/upload/v1760570511/maia/releases/maia-router-1_myszzg.jpg)
 
-Kini tidak perlu lagi overwhelming untuk memanage banyak API Key dari beragam LLM Provider. Dengan MAIA Router, cukup **satu API Key** untuk mengakses semua models dari berbagai provider. Tersedia 250 models termasuk **OpenAI, Anthropic, dan banyak lagi**.
+Kini tidak perlu lagi overwhelming untuk memanage banyak API Key dari beragam LLM Provider. Dengan MAIA Router, cukup **satu API Key** untuk mengakses semua models dari berbagai provider. Tersedia 250 models termasuk **OpenAI, Anthropic, Google Gemini dan banyak lagi**.
 
 Cara daftar MAIA Router sangat mudah. Ikuti langkah-langkah berikut:
 
